@@ -1,0 +1,9 @@
+{
+  "name": "node-boilerplate",
+  "version": "0.1.0",
+  "description": "My Node.js boilerplate for creating new web applications",
+  "main": "app.js",
+  "repository": "https://github.com/antongunov/node-boilerplate.git",
+  "author": "Anton Gunov <anton@gunov.name>",
+  "license": "MIT"
+}
