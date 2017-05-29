@@ -4,6 +4,7 @@
   "description": "My Node.js boilerplate for creating new web applications",
   "main": "app.js",
   "repository": "https://github.com/antongunov/node-boilerplate.git",
+  "private": true,
   "author": "Anton Gunov <anton@gunov.name>",
   "license": "MIT"
 }
