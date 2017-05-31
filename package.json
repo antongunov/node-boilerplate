@@ -1,8 +1,8 @@
 {
   "name": "node-boilerplate",
   "version": "0.1.0",
-  "description": "My Node.js boilerplate for creating new web applications",
-  "main": "app.js",
+  "description": "My Node.js boilerplate for creating web applications",
+  "main": "server/app.js",
   "repository": "https://github.com/antongunov/node-boilerplate.git",
   "private": true,
   "author": "Anton Gunov <anton@gunov.name>",
