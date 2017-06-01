@@ -1,9 +1,11 @@
 {
-    "verbose": true,
-    "watch": [
-      "server/"
-    ],
-    "env": {
-      "NODE_ENV": "dev"
-    }
+  "verbose": true,
+  "watch": [
+    "server/",
+    ".env"
+  ],
+  "execMap": {
+    "env": "npm start"
+  },
+  "ext": "js env"
 }
