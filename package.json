@@ -1,6 +1,6 @@
 {
   "name": "node-boilerplate",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "My Node.js boilerplate for creating web applications",
   "repository": "https://github.com/antongunov/node-boilerplate.git",
   "private": true,
@@ -11,5 +11,9 @@
   },
   "dependencies": {
     "dotenv": "^4.0.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-pug": "^3.3.0"
   }
 }
