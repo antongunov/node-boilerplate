@@ -2,6 +2,4 @@
 
 const gulp = require('gulp');
 
-require('./pug');
-
-gulp.task('default', [ 'pug' ]);
+gulp.task('default', gulp.series('build'));

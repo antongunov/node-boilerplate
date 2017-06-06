@@ -1,0 +1,13 @@
+{
+  "pages": {
+    "from": "server/pages/*.pug",
+    "to": "/"
+  },
+  "static": {
+    "from": "server/pages/*.!(pug)",
+    "to": "/"
+  },
+  "build": {
+    "rootDir": "build/"
+  }
+}
