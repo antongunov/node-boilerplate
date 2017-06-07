@@ -3,11 +3,10 @@
 const gulp = require('gulp');
 const path = require('path');
 const rimraf = require('rimraf');
-const conf = require('../config.json');
 
 gulp.task('clean', (done) => {
 
-    const from = path.join(conf.build.rootDir, '/*');
+    const from = 'build/*';
     const cwd = process.cwd();
     const absFrom = path.join(cwd, from);
 

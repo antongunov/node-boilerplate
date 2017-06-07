@@ -1,8 +1,6 @@
 'use strict';
 
 const gulp = require('gulp');
-const path = require('path');
-const conf = require('../config.json');
 
 gulp.task('static', () => {
 
@@ -10,6 +8,6 @@ gulp.task('static', () => {
         since: gulp.lastRun('static')
     };
 
-    return gulp.src(conf.static.from, srcOpts)
-        .pipe(gulp.dest(path.join(conf.build.rootDir, conf.static.to)));
+    return gulp.src('server/pages/*.!(pug)', srcOpts)
+        .pipe(gulp.dest('build/'));
 });
