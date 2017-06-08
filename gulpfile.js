@@ -11,7 +11,7 @@ require('./gulp/tasks/sass');
 require('./gulp/tasks/watch');
 
 /**
- * Main Tasks
+ * Main tasks
  */
 
 require('./gulp/tasks/build');
