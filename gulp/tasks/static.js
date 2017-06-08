@@ -3,11 +3,6 @@
 const gulp = require('gulp');
 
 gulp.task('static', () => {
-
-    const srcOpts = {
-        since: gulp.lastRun('static')
-    };
-
-    return gulp.src('server/pages/*.!(pug)', srcOpts)
+    return gulp.src('server/pages/*.!(pug)', { since: gulp.lastRun('static') })
         .pipe(gulp.dest('build/'));
 });
