@@ -12,6 +12,5 @@ gulp.task('build', gulp.series(
         'static',
         'pug',
         'sass'
-    ),
-    'watch'
+    )
 ));

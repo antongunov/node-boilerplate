@@ -6,4 +6,7 @@ const gulp = require('gulp');
  * Gulp tasks
  */
 
-gulp.task('default', gulp.series('build'));
+gulp.task('default', gulp.series(
+    'build',
+    'watch'
+));
