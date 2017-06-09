@@ -18,6 +18,7 @@
     "gulp-postcss": "^7.0.0",
     "gulp-pug": "^3.3.0",
     "gulp-sass": "^3.1.0",
+    "postcss-normalize": "^3.0.0",
     "rimraf": "^2.6.1"
   }
 }

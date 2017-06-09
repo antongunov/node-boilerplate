@@ -14,6 +14,7 @@ const postcss = require('gulp-postcss');
  */
 
 const autoprefixer = require('autoprefixer');
+const normalize = require('postcss-normalize');
 
 /**
  * Gulp tasks
@@ -22,6 +23,6 @@ const autoprefixer = require('autoprefixer');
 gulp.task('sass', () => {
     return gulp.src('server/pages/assets/sass/app.scss')
         .pipe(sass())
-        .pipe(postcss([ autoprefixer ]))
+        .pipe(postcss([ normalize(), autoprefixer ]))
         .pipe(gulp.dest('build/static/css/'));
 });
