@@ -8,5 +8,8 @@ const gulp = require('gulp');
 
 gulp.task('default', gulp.series(
     'build',
-    'watch'
+    gulp.parallel(
+        'watch',
+        'serve'
+    )
 ));
