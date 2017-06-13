@@ -14,6 +14,10 @@ const pug = require('gulp-pug');
 
 gulp.task('pug', () => {
     return gulp.src('server/pages/*.pug')
-        .pipe(pug())
+        .pipe(pug({
+            data: {
+                env: process.env
+            }
+        }))
         .pipe(gulp.dest('build/'));
 });

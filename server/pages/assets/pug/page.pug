@@ -9,3 +9,5 @@ html(lang="en")
   body
     block content
     block scripts
+    if env.GA_ID
+      include google-analytics
