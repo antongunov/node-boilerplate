@@ -6,10 +6,10 @@
 
 require('./gulp/tasks/clean');
 require('./gulp/tasks/pug');
-require('./gulp/tasks/static');
+require('./gulp/tasks/copy');
 require('./gulp/tasks/sass');
 require('./gulp/tasks/watch');
-require('./gulp/tasks/serve');
+require('./gulp/tasks/browser-sync');
 
 /**
  * Main tasks

@@ -7,12 +7,12 @@ const browserSync = require('browser-sync').create();
  * Gulp tasks
  */
 
-gulp.task('serve:reload', (done) => {
+gulp.task('browser-sync:reload', (done) => {
     browserSync.reload();
     return done();
 });
 
-gulp.task('serve', (done) => {
+gulp.task('browser-sync:start', (done) => {
 
     browserSync.init({
         server: {
@@ -25,5 +25,5 @@ gulp.task('serve', (done) => {
         return done();
     });
 
-    gulp.watch('build/**/*', gulp.series('serve:reload'));
+    gulp.watch('build/**/*', gulp.series('browser-sync:reload'));
 });
