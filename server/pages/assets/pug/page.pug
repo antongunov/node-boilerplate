@@ -1,13 +1,14 @@
+block data
+
 doctype html
 html(lang="en")
   head
     meta(charset="UTF-8")
     meta(http-equiv="X-UA-Compatible" content="IE=Edge")
-    title
-      block title
-    block links
+    title= title
+    block head
+    link(rel="stylesheet" href="/static/css/app.css")
   body
-    block content
-    block scripts
+    block body
     if env.GA_ID
       include google-analytics
