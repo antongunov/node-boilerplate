@@ -20,13 +20,10 @@ const normalize = require('postcss-normalize');
  * Gulp tasks
  */
 
-gulp.task('sass', (done) => {
+gulp.task('sass', () => {
     return gulp.src('server/pages/assets/sass/app.scss')
         .pipe(sass())
-        .on('error', (err) => {
-            console.error(err.message);
-            return done();
-        })
+        .on('error', sass.logError)
         .pipe(postcss([ normalize(), autoprefixer({ cascade: false }) ]))
         .pipe(gulp.dest('build/static/css/'));
 });
