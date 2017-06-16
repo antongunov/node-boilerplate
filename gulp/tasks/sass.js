@@ -21,7 +21,7 @@ const normalize = require('postcss-normalize');
  */
 
 gulp.task('sass', () => {
-    return gulp.src('server/pages/assets/sass/app.scss')
+    return gulp.src('server/pages/assets/sass/main.scss')
         .pipe(sass())
         .on('error', sass.logError)
         .pipe(postcss([ normalize(), autoprefixer({ cascade: false }) ]))
