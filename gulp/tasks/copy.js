@@ -11,6 +11,12 @@ gulp.task('copy:root', () => {
         .pipe(gulp.dest('build/'));
 });
 
+gulp.task('copy:fonts', () => {
+    return gulp.src('server/pages/assets/fonts/*', { since: gulp.lastRun('copy:fonts') })
+        .pipe(gulp.dest('build/assets/fonts/'));
+});
+
 gulp.task('copy', gulp.parallel(
-    'copy:root'
+    'copy:root',
+    'copy:fonts'
 ));

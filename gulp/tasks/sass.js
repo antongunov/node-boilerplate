@@ -25,5 +25,5 @@ gulp.task('sass', () => {
         .pipe(sass())
         .on('error', sass.logError)
         .pipe(postcss([ normalize(), autoprefixer({ cascade: false }) ]))
-        .pipe(gulp.dest('build/static/css/'));
+        .pipe(gulp.dest('build/assets/css/'));
 });
