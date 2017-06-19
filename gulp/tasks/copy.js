@@ -16,7 +16,7 @@ gulp.task('copy:fonts', () => {
         .pipe(gulp.dest('build/assets/fonts/'));
 });
 
-gulp.task('copy', gulp.parallel(
+gulp.task('copy:assets', gulp.parallel(
     'copy:root',
     'copy:fonts'
 ));

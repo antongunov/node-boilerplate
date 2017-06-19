@@ -15,6 +15,7 @@ const postcss = require('gulp-postcss');
 
 const autoprefixer = require('autoprefixer');
 const normalize = require('postcss-normalize');
+const fontMagician = require('postcss-font-magician');
 
 /**
  * Gulp tasks
@@ -24,6 +25,14 @@ gulp.task('sass', () => {
     return gulp.src('server/pages/assets/sass/main.scss')
         .pipe(sass())
         .on('error', sass.logError)
-        .pipe(postcss([ normalize(), autoprefixer({ cascade: false }) ]))
+        .pipe(postcss([
+            normalize(),
+            fontMagician({
+                hosted: [ 'server/pages/assets/fonts/' ]
+            }),
+            autoprefixer({
+                cascade: false
+            })
+        ]))
         .pipe(gulp.dest('build/assets/css/'));
 });
