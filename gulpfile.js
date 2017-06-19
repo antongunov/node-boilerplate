@@ -10,12 +10,13 @@ require('dotenv').config();
  * Sub-tasks
  */
 
+require('./gulp/tasks/browser-sync');
 require('./gulp/tasks/clean');
-require('./gulp/tasks/pug');
 require('./gulp/tasks/copy');
+require('./gulp/tasks/js');
+require('./gulp/tasks/pug');
 require('./gulp/tasks/sass');
 require('./gulp/tasks/watch');
-require('./gulp/tasks/browser-sync');
 
 /**
  * Main tasks
