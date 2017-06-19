@@ -3,12 +3,12 @@
 Last 2 versions
 
 # Desktop browsers
-Chrome >= 52
+Chrome >= 34
 Edge >= 12
 Explorer >= 10
-Firefox >= 47
-Opera >= 38
-Safari >= 8
+Firefox >= 30
+Opera >= 23
+Safari >= 7
 
 # Mobile browsers
 Android >= 4
