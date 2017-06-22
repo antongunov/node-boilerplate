@@ -10,8 +10,8 @@ gulp.task('build', gulp.series(
     'clean',
     gulp.parallel(
         'copy:assets',
-        'js',
         'pug',
-        'sass'
+        'sass',
+        'webpack'
     )
 ));
