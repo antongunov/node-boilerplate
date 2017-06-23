@@ -12,7 +12,7 @@ gulp.task('default:production', gulp.series(
         'copy:assets',
         'pug',
         'sass',
-        'webpack'
+        'webpack:run'
     )
 ));
 
@@ -22,7 +22,7 @@ gulp.task('default:development', gulp.series(
         'copy:assets',
         'pug',
         'sass',
-        'webpack'
+        'webpack:watch'
     ),
     gulp.parallel(
         'watch',

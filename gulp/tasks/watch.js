@@ -11,6 +11,5 @@ gulp.task('watch', (done) => {
     gulp.watch('server/pages/*.!(pug)', gulp.series('copy:root'));
     gulp.watch('server/pages/assets/fonts/*', gulp.series('copy:fonts'));
     gulp.watch('server/pages/assets/sass/**/*.scss', gulp.series('sass'));
-    gulp.watch('server/pages/assets/js/**/*.js', gulp.series('webpack'));
     return done();
 });
