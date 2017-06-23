@@ -26,7 +26,7 @@ gulp.task('default:development', gulp.series(
     ),
     gulp.parallel(
         'watch',
-        'browser-sync:start'
+        'browser-sync:init'
     )
 ));
 
