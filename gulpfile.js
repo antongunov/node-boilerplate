@@ -22,5 +22,4 @@ require('./gulp/tasks/webpack');
  * Main tasks
  */
 
-require('./gulp/tasks/build');
 require('./gulp/tasks/default');
