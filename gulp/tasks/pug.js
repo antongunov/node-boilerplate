@@ -1,13 +1,13 @@
 'use strict';
 
 const gulp = require('gulp');
-const PluginError = require('gulp-util').PluginError;
 
 /**
  * Gulp plugins
  */
 
 const pug = require('gulp-pug');
+const {log, colors} = require('gulp-util');
 
 /**
  * Log errors nicely
@@ -15,8 +15,14 @@ const pug = require('gulp-pug');
 
 pug.logError = (end) => {
     return (err) => {
-        const message = new PluginError('pug', err.message).toString();
-        process.stderr.write(`${message}\n`);
+
+        const module = colors.blue('pug');
+        const template = colors.magenta(err.filename.slice(process.cwd().length));
+        const status = colors.red.bold('[failed]');
+
+        log(`[${module}] compile pug template ${template} ${status}`);
+        console.error(colors.red(err.message));
+
         return end();
     };
 };
