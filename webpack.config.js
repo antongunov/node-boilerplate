@@ -2,6 +2,7 @@
 
 const resolve = require('path').resolve;
 const fs = require('fs');
+const webpack = require('webpack');
 
 const context = resolve('server/pages/assets/js/');
 
@@ -31,5 +32,8 @@ module.exports = {
                 loader: 'babel-loader'
             }]
         }]
-    }
+    },
+    plugins: [
+        new webpack.NoEmitOnErrorsPlugin()
+    ]
 };
