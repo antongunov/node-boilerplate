@@ -7,21 +7,20 @@ const gulp = require('gulp');
  */
 
 const pug = require('gulp-pug');
-const {log, colors} = require('gulp-util');
+const { log, colors } = require('gulp-util');
 
 /**
  * Log errors nicely
  */
 
-pug.logError = (end) => {
+const logError = (end) => {
     return (err) => {
-
-        const module = colors.blue('pug');
-        const template = colors.magenta(err.filename.slice(process.cwd().length));
+        const template = colors.magenta(`.${err.filename.slice(process.cwd().length)}`);
         const status = colors.red.bold('[failed]');
 
-        log(`[${module}] compile pug template ${template} ${status}`);
-        console.error(colors.red(err.message));
+        log(`[${colors.blue('pug')}] compile template ${template} ${status}`);
+
+        console.error(`\nERROR in ${err.message}\n`);
 
         return end();
     };
@@ -38,6 +37,6 @@ gulp.task('pug', (done) => {
                 env: process.env
             }
         }))
-        .on('error', pug.logError(done))
+        .on('error', logError(done))
         .pipe(gulp.dest('build/'));
 });

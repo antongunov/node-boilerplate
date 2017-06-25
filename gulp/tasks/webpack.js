@@ -3,21 +3,56 @@
 const gulp = require('gulp');
 const webpack = require('webpack');
 const config = require('../../webpack.config');
+const { log, colors } = require('gulp-util');
 
-let compiler = webpack(config);
+const compiler = webpack(config);
 
-let handler = (done) => {
+const handler = (done) => {
     return (err, stats) => {
         if (err) {
             console.error(err.stack || err);
             if (err.details) {
                 console.error(err.details);
             }
-        } else {
-            console.log(stats.toString({
-                colors: true
-            }));
+            return done();
         }
+
+        const info = stats.toJson({
+            assets: false
+        });
+
+        info.modules.forEach((module) => {
+            let status = [];
+            // https://github.com/webpack/webpack/blob/1769fa2d95872bc69a4c38c97b029278796b062a/lib/Stats.js#L608
+            if (module.built) {
+                status.push(colors.green('[built]'));
+            }
+            if (module.failed) {
+                status.push(colors.red.bold('[failed]'));
+            }
+            if (module.warnings) {
+                status.push(colors.yellow(`[${module.warnings} warning${module.warnings === 1 ? '' : 's'}]`));
+            }
+            if (module.errors) {
+                status.push(colors.red(`[${module.errors} error${module.errors === 1 ? '' : 's'}]`));
+            }
+            if (status.length > 0) {
+                log(`[${colors.blue('webpack')}] process module ${colors.magenta(module.name)} ${status.join(' ')}`);
+            }
+        });
+
+        if (info.warnings) {
+            info.warnings.forEach((warning) => {
+                console.warn(`\nWARNING in ${warning}\n`);
+            });
+        }
+
+        if (info.errors) {
+            info.errors.forEach((error) => {
+                console.error(`\nERROR in ${error}\n`);
+            });
+        }
+
         return done();
     }
 };

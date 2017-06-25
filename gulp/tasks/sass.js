@@ -8,6 +8,7 @@ const gulp = require('gulp');
 
 const sass = require('gulp-sass');
 const postcss = require('gulp-postcss');
+const { log, colors } = require('gulp-util');
 
 /**
  * PostCSS plugins
@@ -18,13 +19,30 @@ const normalize = require('postcss-normalize');
 const fontMagician = require('postcss-font-magician');
 
 /**
+ * Log errors nicely
+ */
+
+const logError = (end) => {
+    return (err) => {
+        const file = colors.magenta(`./${err.relativePath}`);
+        const status = colors.red.bold('[failed]');
+
+        log(`[${colors.blue('sass')}] process file ${file} ${status}`);
+
+        console.error(`\nERROR in ./${err.message}`);
+
+        return end();
+    };
+};
+
+/**
  * Gulp tasks
  */
 
-gulp.task('sass', () => {
+gulp.task('sass', (done) => {
     return gulp.src('server/pages/assets/sass/main.scss')
         .pipe(sass())
-        .on('error', sass.logError)
+        .on('error', logError(done))
         .pipe(postcss([
             normalize(),
             fontMagician({
