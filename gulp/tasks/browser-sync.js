@@ -14,34 +14,34 @@ const { log, colors } = require('gulp-util');
  */
 
 gulp.task('browser-sync:reload', (done) => {
-    browserSync.reload();
-    return done();
+  browserSync.reload();
+  return done();
 });
 
 gulp.task('browser-sync:init', (done) => {
 
-    browserSync.init({
-        server: {
-            baseDir: 'build/'
-        },
-        open: false,
-        ui: false,
-        notify: false,
-        logLevel: 'silent'
-    }, (err, bs) => {
+  browserSync.init({
+    server: {
+      baseDir: 'build/'
+    },
+    open: false,
+    ui: false,
+    notify: false,
+    logLevel: 'silent'
+  }, (err, bs) => {
 
-        if (err) {
-            console.error(err.stack || err);
-            return done();
-        }
+    if (err) {
+      console.error(err.stack || err);
+      return done();
+    }
 
-        const module = colors.blue('browser-sync');
-        const port = colors.green(bs.options.getIn([ 'port' ]));
+    const module = colors.blue('browser-sync');
+    const port = colors.green(bs.options.getIn(['port']));
 
-        log(`[${module}] listening on port ${port}`);
+    log(`[${module}] listening on port ${port}`);
 
-        return done();
-    });
+    return done();
+  });
 
-    gulp.watch('build/**/*', gulp.series('browser-sync:reload'));
+  gulp.watch('build/**/*', gulp.series('browser-sync:reload'));
 });

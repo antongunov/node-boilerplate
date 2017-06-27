@@ -14,16 +14,16 @@ const { log, colors } = require('gulp-util');
  */
 
 const logError = (end) => {
-    return (err) => {
-        const template = colors.magenta(`.${err.filename.slice(process.cwd().length)}`);
-        const status = colors.red.bold('[failed]');
+  return (err) => {
+    const template = colors.magenta(`.${err.filename.slice(process.cwd().length)}`);
+    const status = colors.red.bold('[failed]');
 
-        log(`[${colors.blue('pug')}] compile template ${template} ${status}`);
+    log(`[${colors.blue('pug')}] compile template ${template} ${status}`);
 
-        console.error(`\nERROR in ${err.message}\n`);
+    console.error(`\nERROR in ${err.message}\n`);
 
-        return end();
-    };
+    return end();
+  };
 };
 
 /**
@@ -31,12 +31,12 @@ const logError = (end) => {
  */
 
 gulp.task('pug', (done) => {
-    return gulp.src('server/pages/*.pug')
-        .pipe(pug({
-            data: {
-                env: process.env
-            }
-        }))
-        .on('error', logError(done))
-        .pipe(gulp.dest('build/'));
+  return gulp.src('server/pages/*.pug')
+    .pipe(pug({
+      data: {
+        env: process.env
+      }
+    }))
+    .on('error', logError(done))
+    .pipe(gulp.dest('build/'));
 });
