@@ -2,8 +2,6 @@
  * Node.js Boilerplate
  */
 
-'use strict';
-
 const http = require('http');
 
 const NODE_PORT = parseInt(process.env.NODE_PORT, 10);

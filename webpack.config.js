@@ -1,5 +1,3 @@
-'use strict';
-
 const resolve = require('path').resolve;
 const fs = require('fs');
 const webpack = require('webpack');
