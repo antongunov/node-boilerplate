@@ -20,35 +20,31 @@ const fontMagician = require('postcss-font-magician');
  * Log errors nicely
  */
 
-const logError = (end) => {
-  return (err) => {
-    const file = colors.magenta(`./${err.relativePath}`);
-    const status = colors.red.bold('[failed]');
+const logError = end => (err) => {
+  const file = colors.magenta(`./${err.relativePath}`);
+  const status = colors.red.bold('[failed]');
 
-    log(`[${colors.blue('sass')}] process file ${file} ${status}`);
+  log(`[${colors.blue('sass')}] process file ${file} ${status}`);
 
-    console.error(`\nERROR in ./${err.message}`);
+  console.error(`\nERROR in ./${err.message}`);
 
-    return end();
-  };
+  return end();
 };
 
 /**
  * Gulp tasks
  */
 
-gulp.task('sass', (done) => {
-  return gulp.src('server/pages/assets/sass/main.scss')
+gulp.task('sass', done => gulp.src('server/pages/assets/sass/main.scss')
     .pipe(sass())
     .on('error', logError(done))
     .pipe(postcss([
       normalize(),
       fontMagician({
-        hosted: ['server/pages/assets/fonts/']
+        hosted: ['server/pages/assets/fonts/'],
       }),
       autoprefixer({
-        cascade: false
-      })
+        cascade: false,
+      }),
     ]))
-    .pipe(gulp.dest('build/assets/css/'));
-});
+    .pipe(gulp.dest('build/assets/css/')));

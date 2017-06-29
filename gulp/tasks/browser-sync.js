@@ -17,17 +17,15 @@ gulp.task('browser-sync:reload', (done) => {
 });
 
 gulp.task('browser-sync:init', (done) => {
-
   browserSync.init({
     server: {
-      baseDir: 'build/'
+      baseDir: 'build/',
     },
     open: false,
     ui: false,
     notify: false,
-    logLevel: 'silent'
+    logLevel: 'silent',
   }, (err, bs) => {
-
     if (err) {
       console.error(err.stack || err);
       return done();
