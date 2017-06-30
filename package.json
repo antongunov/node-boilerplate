@@ -1,13 +1,13 @@
 {
-  "name": "node-boilerplate",
-  "version": "0.4.0",
+  "name": "@antongunov/node-boilerplate",
+  "version": "0.5.0",
   "description": "My Node.js boilerplate for creating web applications",
   "repository": "https://github.com/antongunov/node-boilerplate.git",
   "private": true,
   "author": "Anton Gunov <anton@gunov.name>",
   "license": "MIT",
   "scripts": {
-    "start": "node -r dotenv/config server/app.js"
+    "start": "node -r dotenv/config server/server.js"
   },
   "dependencies": {
     "dotenv": "^4.0.0"
