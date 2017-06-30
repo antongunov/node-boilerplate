@@ -20,6 +20,7 @@ gulp.task('browser-sync:init', (done) => {
   browserSync.init({
     server: {
       baseDir: 'build/',
+      index: 'home.html',
     },
     open: false,
     ui: false,
