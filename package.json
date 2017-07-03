@@ -2,10 +2,19 @@
   "name": "@antongunov/node-boilerplate",
   "version": "0.5.0",
   "description": "My Node.js boilerplate for creating web applications",
-  "repository": "https://github.com/antongunov/node-boilerplate.git",
   "private": true,
-  "author": "Anton Gunov <anton@gunov.name>",
+  "author": {
+    "name": "Anton Gunov",
+    "email": "anton@gunov.name"
+  },
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/antongunov/node-boilerplate.git"
+  },
+  "bugs": {
+    "url": "https://github.com/antongunov/node-boilerplate/issues"
+  },
   "scripts": {
     "start": "node -r dotenv/config server/"
   },
