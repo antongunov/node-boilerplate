@@ -1,7 +1,9 @@
 const router = require('express').Router();
 
-router.get('/ping', (req, res) => {
-  res.status(200).json('PONG!');
+router.get('/hello/:name', (req, res) => {
+  res.status(200).json({
+    hello: req.params.name,
+  });
 });
 
 router.use((req, res) => {
