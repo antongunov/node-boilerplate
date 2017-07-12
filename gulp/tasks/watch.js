@@ -1,7 +1,7 @@
 const gulp = require('gulp');
 
 const pagesDir = 'server/pages';
-const nginxDir = 'config/nginx';
+const nginxDir = 'conf/nginx';
 
 /**
  * Gulp tasks
