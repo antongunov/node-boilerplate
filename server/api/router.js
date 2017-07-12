@@ -8,7 +8,7 @@ router.get('/hello/:name', (req, res) => {
 
 router.use((req, res) => {
   res.status(404).json({
-    error: `Unknown API endpoint "${req.method} ${req.url}"`,
+    error: `Unknown API endpoint "${req.method} ${req.baseUrl}${req.url}"`,
   });
 });
 

@@ -16,7 +16,8 @@
     "url": "https://github.com/antongunov/node-boilerplate/issues"
   },
   "scripts": {
-    "start": "node -r dotenv/config server/"
+    "start": "node -r dotenv/config server/",
+    "test": "mocha -r dotenv/config --timeout 7000 tests/**/*.js"
   },
   "dependencies": {
     "dotenv": "^4.0.0",
@@ -36,10 +37,12 @@
     "gulp-pug": "^3.3.0",
     "gulp-sass": "^3.1.0",
     "gulp-util": "^3.0.8",
+    "mocha": "^3.4.2",
     "mustache": "^2.3.0",
     "postcss-font-magician": "^2.0.0",
     "postcss-normalize": "^4.0.0",
     "rimraf": "^2.6.1",
+    "supertest": "^3.0.0",
     "webpack": "^3.1.0"
   }
 }
