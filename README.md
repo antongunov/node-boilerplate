@@ -1,6 +1,6 @@
 # Node.js Boilerplate
 
-My Node.js boilerplate for creating web applications.
+Node.js boilerplate for creating web applications using Express.js and MongoDB.
 
 ## License
   

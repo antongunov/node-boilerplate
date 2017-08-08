@@ -1,7 +1,7 @@
 {
   "name": "@antongunov/node-boilerplate",
   "version": "0.5.0",
-  "description": "My Node.js boilerplate for creating web applications",
+  "description": "Node.js boilerplate for creating web applications using Express.js and MongoDB",
   "private": true,
   "author": {
     "name": "Anton Gunov",
