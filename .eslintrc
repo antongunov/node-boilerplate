@@ -3,10 +3,7 @@
   "rules": {
     "import/no-extraneous-dependencies": [ "error", {
       "devDependencies": [
-        "gulpfile.js",
-        "gulp/**",
-        "tests/**",
-        "webpack.config.js"
+        "tests/**"
       ]
     }]
   }
