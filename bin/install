@@ -4,4 +4,4 @@ set -e
 
 NODE_MAX_MEM=300
 
-node --max-old-space-size=$NODE_MAX_MEM /usr/bin/npm install
+node --max-old-space-size=$NODE_MAX_MEM /usr/sbin/npm install

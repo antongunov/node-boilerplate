@@ -15,8 +15,3 @@ indent_size = 2
 
 [*.md]
 trim_trailing_whitespace = false
-
-[*.min.*]
-indent_style = ignore
-insert_final_newline = ignore
-trim_trailing_whitespace = false
