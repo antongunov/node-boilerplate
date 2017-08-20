@@ -15,6 +15,7 @@
   "bugs": {
     "url": "https://github.com/antongunov/node-boilerplate/issues"
   },
+  "main": "server/",
   "scripts": {
     "start": "node -r dotenv/config server/",
     "test": "mocha -r dotenv/config --timeout 7000 tests/**/*.js"
